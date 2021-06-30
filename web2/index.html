@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DanaBurton</title>
+
+    <!--메타정보입력 -->
+    <mata name="title" content="aesop">
+    <meta name="description" content="비비드한 컬러의 트렌디한 주얼리를 판매합니다.">
+    <meta name="keywords" content="트렌트주얼리,주얼리,반지,귀걸이,목걸이,발찌,팔지,플라워라인,포인트악세서리">
+    <meta name="subject" content="브랜드,라인,샵,스토어,셀럽">
+    <!--바로가기아이콘 -->
+    <link rel="shorcut icon" href="./icon/16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="./icon/opn_96.png" sizes="96x96">
+    <link rel="icon" href="./icon/opn_192.png" sizes="192x192">
+    <!--오픈그래프 -->
+    <meta property="og:type" content="wevsite">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="DanaBurton">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="비비드한 컬러의 트렌디한 주얼리를 판매합니다.">
+    <meta property="og:site_name" content="브랜드,라인,샵,스토어,셀럽즈">
+    <!--폰트 파일 임포트 link태그 -->
+    <link rel="stylesheet" href="../fonts.css">
+    <!--html5shiv.js연결 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109283150-1"></script>
+    <!--스타일초기화 -->
+    <link rel="stylesheet" href="reset.css">
+    <!--jQuery 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+        
+       <!-- #f198a8 241,152,168 #00b3ba -->
+
+
+
+    <style>
+        .mono {font-family: "mono", monospace, sans-serif;}
+    </style>
+        
+    <style>
+        .container {clear: both; width: 100%; }
+        #all_menu {position: fixed; background-color:rgba(255,255,255,0.95);   width:100vw; height:100vh; opacity: 0; visibility: hidden; z-index:90; top:135px; margin: 0 auto;}
+        #ck1:checked ~ #all_menu {opacity: 1; visibility: visible; }
+        .menu_fr {width:1440px; margin: 0 auto;  }
+        .menu_fr li.cate {display: block; width: 20%; float:left; } 
+
+        .dp2 {padding-top:10px; font-size: 15px; }
+        .menu_fr li.cate .dp2 li a { color:#333; }
+        .menu_fr li.cate .dp2 li a:hover {color:#f198a8; text-decoration: underline; }
+        
+        .search_form { position:fixed; left: 0; top:135px; width: 100vw; height:0px; z-index:90; background-color:rgba(240,240,240,0.95); transition-duration:0.6s;  overflow:hidden;}
+        .search_fr {width: 1000px; margin: 0 auto; position:relative; padding-top: 60px; }
+        .search_fr fieldset { border:0; outline:0; }
+        #keywords {display:block; width: 1000px; height:60px; border:none; outline: 0; border-bottom: 2px solid #333; text-indent:14px; font-size:20px; background-color:transparent;}
+        #search_btn { display:block; background-color:transparent; text-indent:-9999px; width: 60px; height:60px; background-image: url("./icon/sc.png"); background-position:center center; background-repeat:no-repeat; position:absolute; right: 0px; top:60px; cursor:pointer; outline:none; border:0;  }
+        #ck2:checked ~ .search_form {opacity: 1; visibility: visible; height:35vh;}
+        .hash_fr a { display:block; line-height:20px; padding: 5px 12px color:#333; border:1px solid #ccc background-color:#eee; font-size:16px; border-radius:16px; float: left; margin-right: 18px; margin-bottom:18px;   }
+        .hash_fr a:hover{color:#f198a8; text-decoration: underline; }
+        .ck {display: none;}
+        .menu_call_btn { display:block;  
+        background-image:url("./icon/mu.png"); 
+        background-position: center center; background-repeat: no-repeat;   cursor:pointer; text-indent: -9999px; }
+        .search_call_btn { display:block;
+        background-image:url("./icon/sc.png"); 
+        background-position: center center; background-repeat: no-repeat;  cursor:pointer;  text-indent: -9999px; } 
+
+    </style>
+    <style>
+        .hd {clear: both; width: 100%; height: 135px; background-color:#fff; border-bottom:1px solid #ccc; position:fixed; top: 0;left: 0; z-index:91;}
+        .hd_wrap {clear: both; width: 1400px; height: 50px; margin: 0 auto; border-bottom: 1px solid #ccc; position: relative;}
+        .top1 {float: left;}
+        .top1 li {float: left; }
+        .top1 li a {display: block;  text-align: center; padding: 7px; cursor:pointer;}
+        
+        .search_call_btn {display: block; width: 30px;  background-image: url(./icon/sc.png); background-position: center center; background-repeat: no-repeat; cursor:pointer; padding: 10px;}
+        .menu_call_btn {display: block; width: 30px;  background-image: url(./icon/mu.png);  background-position: center center; background-repeat: no-repeat; cursor:pointer; padding: 10px;}
+        
+        .logo {display: block; margin-top:10px;}
+        .logo a {display: block; position: absolute; left: 45%;}
+        
+        .login_cart {float: right; }
+        .login_cart a {display: block; float: left; padding-left: 15px; padding-top: 15px; color:#000000; font-size:15px; text-align: center;}
+        .login_cart a:hover {color:#f198a8; font-weight: 600; }
+
+        #gnb { clear:both; width: 1400px; margin: 0 auto; }
+        #gnb > ul > li { float:left; width: 20%; text-align:center; line-height: 80px; }
+        #gnb li a.dp1 { color:#666; display:block; line-height: 70px; 
+            border-bottom:3px solid transparent; font-weight: 400;
+            font-size:20px; letter-spacing:-1px; }
+        #gnb li:hover a.dp1 { color:#333; font-weight: 600;
+            border-bottom:3px solid #f198a8; }    
+        .sub { /*opacity:0; visibility: hidden;*/  transition-duration:0.6s; width: 100vw; position:absolute; left: 0; top:135px;  height: 0; overflow:hidden; 
+            background-color:#eee; }   
+        #gnb li:hover .sub { opacity:1; visibility:visible;  } 
+        #gnb li:hover .sub.item2 { height: 80px; padding-left:30vw; }
+        #gnb li .sub.item2 li { float:left; margin-right: 30px; }
+        #gnb li .sub.item2 li { float:left; margin-right: 30px; }    
+
+        #gnb li:hover .sub.item3 { height:300px; padding-left:48vw; }
+        #gnb li .sub.item3 ul {  float:left; width:180px; margin-right: 25px; text-align:left; }   
+        #gnb li .sub.item3 ul li { line-height: 36px; padding-top: 15px; }    
+        #gnb li .sub.item3 ul li.menu_tit { padding-top: 30px; line-height: 44px; border-bottom:1px solid #333; }  
+        #gnb li .sub.item3 ul li a { color:#777; }    
+        #gnb li .sub.item3 ul li a:hover { color:#333; font-weight:600; }
+
+        #gnb li:hover .sub.item4 { height:250px;  padding-left:61vw; }
+        #gnb li .sub.item4 ul {  float:left; width:180px; margin-right: 25px; text-align:left; }   
+        #gnb li .sub.item4 ul li { line-height: 36px; padding-top: 15px; }    
+        #gnb li .sub.item4 ul li.menu_tit { padding-top: 30px; line-height: 44px; border-bottom:1px solid #333; }  
+        #gnb li .sub.item4 ul li a { color:#777; }    
+        #gnb li .sub.item4 ul li a:hover { color:#333; font-weight:600; }    
+
+        #gnb li:hover .sub.item5 { height: 80px; padding-left: 58vw; }
+
+
+    </style>
+    <style>
+        .content {padding-top: 136px; clear: both; width: 100%;}
+        .vs{ width:1400px; height: 800px; margin:0 auto; position: relative;}
+        .vs .img_box {width:1400px; height: 800px; overflow: hidden;  }
+        .vs .img_fr {width: 400%; transition-duration: 0.6s; }
+        .vs .img_fr li {width: 25%; float: left;}
+        #ra1:checked ~ .img_box .img_fr {margin-left:0;}
+        #ra2:checked ~ .img_box .img_fr {margin-left:-1400px;}
+        #ra3:checked ~ .img_box .img_fr {margin-left:-2800px;}
+
+        .ra { display:none; }    
+        .arr_box li { display:none; }    
+        #ra1:checked ~ .arr_box li:first-child { display:block; }  
+        #ra2:checked ~ .arr_box li:nth-child(2) { display:block; }
+        #ra3:checked ~ .arr_box li:last-child { display:block; }    
+
+        .arr_box label { display:block; background-color: transparent;
+            width: 30px; height: 50px; background-image:url(./icon/arr_right2.png); background-position:center center; background-repeat: no-repeat; 
+            position:absolute; top:42%; cursor:pointer; z-index:10; }  
+        .arr_box .prev_btn {left:-10%; transform:rotate(180deg); }  
+        .arr_box .next_btn {right:-10%; }  
+
+        .arr_box li:first-child .prev_btn { display:none; }    
+        .arr_box li:last-child .next_btn { display:none; }    
+
+        .tit_box li { position:absolute; left: -100px; bottom:10px; 
+            z-index:20; width: 600px; height: 300px;  background-color:transparent; }
+        .vs_tit {  line-height: 1.3; padding-left: 36px; font-size:32px; }    
+        .vs_com { padding-top: 18px; padding-left: 36px; }
+        .vs_arrow { display:block; width: 81px; height: 81px; 
+            background-image:url(./icon/more_btn.png); 
+            background-position:center center; background-repeat: no-repeat; position:absolute; right:-35px; bottom:40px; z-index:30; display:none; cursor:pointer; }
+
+        .tit_box li:first-child { background-color:rgba(255,255,255,1);
+            border:1px solid #ccc; }
+
+        .tit_box li .vs_tit { opacity:0; visibility:hidden; transition-duration:0.6s; padding-top: 40px; font-size: 50px;}    
+        .tit_box li .vs_com { opacity:0; visibility:hidden; transition-duration:0.6s; font-size: 20px; line-height: 30px; } 
+        #ra1:checked ~ .tit_box li:first-child .vs_tit { opacity:1; visibility: visible; }   
+        #ra1:checked ~ .tit_box li:first-child .vs_com { opacity:1; visibility: visible; } 
+        #ra2:checked ~ .tit_box li:nth-child(2) .vs_tit { opacity:1; visibility: visible; }   
+        #ra2:checked ~ .tit_box li:nth-child(2) .vs_com { opacity:1; visibility: visible; } 
+        #ra3:checked ~ .tit_box li:last-child .vs_tit { opacity:1; visibility: visible; }   
+        #ra3:checked ~ .tit_box li:last-child .vs_com { opacity:1; visibility: visible; }
+
+        #ra1:checked ~ .tit_box li:first-child .vs_arrow { display:block; }  
+        #ra2:checked ~ .tit_box li:nth-child(2) .vs_arrow { display:block; } 
+        #ra3:checked ~ .tit_box li:last-child .vs_arrow { display:block; }  
+        .vs_num_box { position:absolute; z-index:30; top:43.5%; 
+            right:-5%; font-size:20px; font-weight:500; }
+        .vs_num_box .cur_num { font-weight: 700; } 
+        
+    .page { clear:both; width: 100%; }    
+    .page_wrap { clear:both; padding-top:120px; width: 1400px; margin: 0 auto;   }
+    .page_wrap h2 {font-size: 80px; color:#f198a8; text-align: center; padding-bottom: 40px;}
+    .lst_box1 { width: 1400px; margin: 0 auto; }    
+    .lst_box1 li { width: 450px; margin-right: 10px; float:left; 
+        position:relative; height: 481px; margin-bottom: 100px; cursor: pointer; }
+    .lst_box1 li:last-child { margin-right: 0; } 
+    .lst_box1 li img { display:block; width: 450px; height: 481px; } 
+    .more { display:block; width: 64px; height: 64px; position:absolute; bottom: 0; right: 0; z-index:10; 
+        background-image: url("./img/sec2_btn_more.jpg"); }  
+    .lst_tit_box { width: 400px; height: 240px; background-color:#fff; position:absolute; left:-300px; bottom:-120px; z-index:20; opacity:0; visibility:hidden; transition-duration:0.5s; border:1px solid #eee; }
+    .lst_box1 li:hover .lst_tit_box { opacity:1; visibility: visible; left: 40px;  }    
+    .lst_tit { padding-left: 30px;  padding-top:40px; text-align: center; font-size: 30px;}
+    .lst_com { padding-left: 30px; font-size: 18px;  padding-right: 30px; padding-top:30px; text-align: center; line-height:30px;  }  
+    .detail { position:absolute; bottom:16px; right:10px; 
+        color:#00b3ba; text-decoration:underline; font-size:12px; word-break:break-all; text-align:justify; }   
+    .detail a {clear: both; color:#00b3ba; }
+        
+    </style>
+    <style>
+        .lst_box2 {clear: both;width: 1440px;margin: 0 auto;position: relative;}
+
+        .lst_box2 .ban_box1 {width: 50%;float: left;height: 100vh;}
+
+        .ban_box1 .box1 { clear: both;width: 100%;  height: 40px;overflow: hidden; }
+
+        .ban_box1 .box1 .box1_fr {clear: both; width: 100%; height: 120px;transition-duration: 0.5s;}
+
+        .ban_box1 .box1 li { clear: both; height: 40px;}
+
+        .ban_box1 .box1 .ban_tit { font-size: 25px;line-height: 40px;height: 40px;padding-top: 0; }
+
+        .ban_box1 .box2 { padding-top: 20px; width: 500px;height: 500px; position: relative;overflow: hidden; }
+
+        .ban_box1 .box2 .box2_fr { width: 1500px;height: 500px;transition-duration: 0.5s; }
+
+        .ban_box1 .box2 .box2_fr li { float: left; width: 500px;height: 500px; }
+
+        .ban_box1 .box2 .box2_fr li img { display: block;width: 100%; height: auto; }
+
+        .ban_box1 .box3 {clear: both;width: 400px;height: 80px; padding-top: 20px;overflow: hidden; }
+
+        .ban_box1 .box3 .box3_fr {width: 1200px;height: 80px; position: relative; }
+
+        .ban_box1 .box3 .box3_fr li { width: 400px;height: 80px;float: left; padding-right: 70px; position: absolute;left: -400px;top: 0;transition: 0.5s;}
+
+        .ban_box1 .box3 .box3_fr li .ban_com {padding-top: 15px; font-size: 15px; line-height: 30px;}
+
+        .ban_box1 .box4 { width: 250px; height: 64px; margin-top: 25px; clear: both;background-color: #000; position: relative; border: 1px solid #999;}
+
+        .ban_box1 .box4 .ban_more { display: block;width: 250px;height: 64px;line-height: 64px;background-image: url("./img/btn_black_arrow.png"); background-repeat: no-repeat; background-position: 185px center;text-indent: 40px;color: #fff; position: absolute;top: 0;left: 0;z-index: 4;}
+
+        .ban_box1 .box4:before { content: ""; display: block; width: 250px;height: 64px;background-color: #fff;position: absolute;left: -250px; top: 0;z-index: 3; transition-duration: 0.5s; }
+
+        .ban_box1 .box4:hover .ban_more { background-image:url("./img/btn_black_arrow_on.png");color: #000;}
+
+        .ban_box1 .box4:hover::before {left: 0;}
+
+
+        .lst_box2 .ban_box2 {width: 580px;float: right;height: 100vh;}
+
+        .lst_box2 .ban_box2 .box1 { width: 687px;height: 735px; clear: both;overflow: hidden;}
+
+        .lst_box2 .ban_box2 .box1 .box1_fr {width: 580px; height: 2400px; transition-duration: 1s;transition-delay: 0.4s; transition-timing-function: ease-out;}
+
+        .lst_box2 .ban_box2 .box1 li { width: 687px; height: 735px; clear: both; overflow: hidden;}
+
+        .lst_box2 .ban_box2 .box1 li img {display: block;width: 687px;height: 735px; transform: scale(2); transition-duration: 0.5s; }
+
+        .lst_box2 .ban_box2 .box2 { width: 580px;height: 40px;padding-top: 20px; overflow: hidden;}
+
+        .lst_box2 .ban_box2 .box2 .box2_fr {width: 1800px; height: 40px; transition: 0.5s;}
+
+        .lst_box2 .ban_box2 .box2 .box2_fr li {width: 580px; height: 40px;float: left;}
+
+        .lst_box2 .ban_box2 .box2 .box2_fr li .ban_com { font-weight: 600;font-size: 30px;}
+
+        .lst_box2 .ban_box3 label {display: block;width: 72px;height: 25vh;position: absolute; line-height: 72px;left: 50%; margin-left: -36px;z-index: 10;writing-mode: vertical-lr;font-size: 24px;font-weight: 700;cursor: pointer;border-left: 3px solid transparent;}
+
+        .lst_box2 .ban_box3 label.item1 {top: 12.5vh; text-align: center;}
+
+        .lst_box2 .ban_box3 label.item2 { top: 37.5vh; text-align: center;}
+
+
+        .ba { display: none;}
+
+        #ba1:checked~.lst_box2 .ban_box1 .box1 .box1_fr { margin-top: 0; }
+
+        #ba2:checked~.lst_box2 .ban_box1 .box1 .box1_fr { margin-top: -40px;}
+
+
+        #ba1:checked~.lst_box2 .ban_box1 .box2 .box2_fr {margin-left: 0; }
+
+        #ba2:checked~.lst_box2 .ban_box1 .box2 .box2_fr { margin-left: -500px;}
+
+
+        #ba1:checked~.lst_box2 .ban_box1 .box3 .box3_fr li.item1 {left: 0;}
+
+        #ba2:checked~.lst_box2 .ban_box1 .box3 .box3_fr li.item2 {left: 0;}
+
+
+
+        #ba1:checked~.lst_box2 .ban_box2 .box1 .box1_fr {margin-top: 0; }
+
+        #ba2:checked~.lst_box2 .ban_box2 .box1 .box1_fr { margin-top: -777px; }
+
+
+        #ba1:checked~.lst_box2 .ban_box2 .box1 li.item1 img { transform: scale(1);}
+
+        #ba2:checked~.lst_box2 .ban_box2 .box1 li.item2 img {transform: scale(1);}
+        #ba1:checked~.lst_box2 .ban_box2 .box2 .box2_fr { margin-left: 0; }
+
+        #ba2:checked~.lst_box2 .ban_box2 .box2 .box2_fr { margin-left: -580px;}
+
+        #ba1:checked~.lst_box2 .ban_box3 label.item1 {background-color:Rgba(241,152,168,0.8);  }
+
+        #ba2:checked~.lst_box2 .ban_box3 label.item2 {background-color:Rgba(241,152,168,0.8); }
+
+    </style>        
+    <style>
+        #page3 {width:100%;}
+        #page3 .ban_box {width: 1400px; margin: 0 auto;}
+        #page3 .ban_box .banbox_top { width: 1500px; clear: both;}
+        #page3 .ban_box .banbox_top ul  {width:1500px; height: auto; margin: 0 auto;}
+        #page3 .ban_box .banbox_top ul.top_right_box img {display: block;float: left; padding: 10px; padding-top: 310px;}
+        #page3 .ban_box .banbox_top ul.top_left_box img {display: block;float: left; padding: 10px;}
+        .clr:after {content:" "; display: block; clear: both; height: 200px; padding-top: 20px;}
+        #page3 .ban_box .banbox_bottom {width:1500px; clear: both;}
+        #page3 .ban_box .banbox_bottom ul {width:1500px; height: auto; margin: 0 auto;}
+        #page3 .ban_box .banbox_bottom ul img {display: block; float:left; padding: 10px;}
+        
+        #page3 h2 {width: 1400; margin: 0 auto; text-align: center; font-size: 80px; padding-bottom: 40px; padding-top: 20px; color:#00b3ba; font-family:'mono';}
+    </style> 
+        <style>
+        .ft {clear: both; width: 100%;height: 200px; background-color:#f198a8; color: #000000 ;padding-top: 30px;}
+        .ft_wrap { width: 1440px;margin: 0 auto;}
+        .ft_box .col1,.ft_box .col2 {float: left;}
+        .ft_box .col2 { padding-left: 60px;}
+        .ft_box .col3 {float: right;position: relative; height: 200px;}
+        .linkbar {padding-top: 20px; padding-bottom: 30px;}
+        .linkbar a { color: #000000; padding-right: 20px; font-size: 16px; }
+        .linkbar a:hover { color: #fff;}
+        .linkbar a:after { content: "|"; padding-left: 25px;}
+        .linkbar a:last-child::after { content: ""; }
+        .addr { font-size: 12px;padding-bottom: 18px;color: #000000; }
+        .copyright {font-size: 12px;color: #000000; }
+            
+        .sns_link a { display: block; width: 40px; height: 40px; background-position: center center;  background-repeat: no-repeat;float: left;margin-left: 15px;padding-top: 200px;}
+        .sns_link a.utb_ico { background-image: url("./icon/youtube_b.png"); }
+        .sns_link a.insta_ico {background-image: url("./icon/instargram_b.png");}
+        .sns_link a.face_ico { background-image: url("./icon/facebook_b.png"); }
+        .sns_link a.utb_ico:hover {background-image: url("./icon/youtube_w.png");}
+        .sns_link a.insta_ico:hover { background-image:url("./icon/instargram_w.png");}
+        .sns_link a.face_ico:hover { background-image: url("./icon/facebook_w.png"); }
+        
+
+    </style>          
+    <style>
+   /*     #pop {background-color:rgba(0,0,0,0.7); width: 100vw; height:100vh; position:fixed;} */
+    </style>
+        
+</head>
+<body>
+    <div class="container">
+     <input type="checkbox" id="ck1" class="ck">
+     <input type="checkbox" id="ck2" class="ck">
+     <nav id="all_menu">
+         <ul class="menu_fr">
+            <li class="cate">
+                <h2 class="cate_tit">BRAND</h2>
+
+            </li>
+         </ul>
+         <ul class="menu_fr">
+            <li class="cate">
+                <h2 class="cate_tit">LINE</h2>
+                <ul class="dp2">
+                    <li><a href="">Florescence</a></li>
+                    <li><a href="">Eunola</a></li>
+                </ul>
+            </li>
+         </ul>
+        <ul class="menu_fr">
+            <li class="cate">
+                <h2 class="cate_tit">PRODUCT</h2>
+                <ul class="dp2">
+                     <li><a href="">Earring</a></li>
+                     <li><a href="">Necklace</a></li>
+                     <li><a href="">Ring</a></li>
+                     <li><a href="">Bracelet</a></li>
+                     <li><a href="">Acc</a></li>
+                </ul>
+            </li>
+         </ul>
+        <ul class="menu_fr">
+            <li class="cate">
+                <h2 class="cate_tit">LOOKBOOK</h2>
+                <ul class="dp2">
+                     <li><a href="">[2021SS]Florescence</a></li>
+                     <li><a href="">[2021SS]Eunoia</a></li>
+                     <li><a href="">[2020FW]Florescence</a></li>
+                     <li><a href="">[2020FW]Eunoia</a></li>
+                </ul>
+            </li>
+         </ul>
+                  <ul class="menu_fr">
+            <li class="cate">
+                <h2 class="cate_tit">CELEB</h2>
+
+            </li>
+         </ul>
+     </nav>
+     <div class="search_form">
+      <form action="" class="search_fr">
+      <fieldset>
+           <input type="text" id="keywords">
+           <input type="submit" id="search_btn">
+      </fieldset>
+            <div class="hash_fr">
+               <h3 class="hash_tit">인기 검색어</h3>
+               <a href="">플로레스</a>
+               <a href="">글로리 오브 더 스노우 귀걸이</a>
+               <a href="">딤스로켓 펄 귀걸이</a>
+               <a href="">프리지아 스프링 플라워 발찌</a>
+               <a href="">쁘띠 프루츠 귀걸이</a>
+               <a href="">세레니티 체인 귀걸이</a>
+               <a href="">글로시 하트 체인 팔찌</a>
+            </div>  
+        </form>
+      </div>
+    
+      <header class="hd">
+          <div class="hd_wrap">
+              <ul class="top1">
+                  <li>
+                    <label for="ck1" class="menu_call_btn">
+                        전체메뉴
+                    </label>
+                  </li>
+                  <li>
+                    <a href=""><img src="./icon/map.png" alt="매장안내아이콘"></a>
+                  </li>                  
+                  <li>
+                    <label for="ck2" class="search_call_btn">
+                        검색
+                    </label>
+                  </li>
+              </ul>
+              <div class="logo">
+              <a href=""><img src="./mainpage/main_logo.png" alt=""></a>
+              </div>
+              <div class="login_cart">
+                  <a href="" class="cur_lang">LOGIN</a>
+                  <a href="">CART</a>
+              </div>
+          </div>
+          <nav class="gnb" id="gnb">
+              <ul>
+                  <li>
+                       <a href="" class="dp1">BRAND</a> 
+                  </li>
+                  <li>
+                       <a href="" class="dp1">LINE</a>
+                       <div class="sub item2">
+                           <ul>
+                                <li>Florescence</li>
+                                <li>Eunola</li>
+                           </ul>
+                       </div>
+                  </li>
+                  <li>
+                        <a href="" class="dp1">PRODUCT</a>
+                        <div class="sub item3">
+                            <ul>
+                                <li>Earring</li>
+                                <li>Necklace</li>
+                                <li>Ring</li>
+                                <li>Bracelet</li>
+                                <li>Acc</li>
+                            </ul>
+                        </div>  
+                  </li>
+                  <li>
+                        <a href="" class="dp1">LOOKBOOK</a>
+                        <div class="sub item4">        
+                             <ul>
+                                 <li>[2021SS]Florescence</li>
+                                 <li>[2021SS]Eunoia</li>
+                                 <li>[2020FW]Florescence</li>
+                                 <li>[2020FW]Eunoia</li>
+                             </ul>
+                        </div>  
+                  </li>
+                  <li>
+                        <a href="" class="dp1">CELEB</a>
+                  </li>
+              </ul> 
+          </nav>
+          
+      </header>
+      <div class="content">
+          <figure class="vs" id="vs">
+              <input type="radio" id="ra1" name="ra" class="ra" data-val="1"checked>
+              <input type="radio" id="ra2" name="ra" class="ra" data-val="2" >
+              <input type="radio" id="ra3" name="ra" class="ra" data-val="3" >
+              <div class="img_box">
+                  <ul class="img_fr">
+                      <li><img src="mainpage/vs1.png" alt="여성모델이 턱을 괴고 하얀색의 진주와칼랑코꽃으로된 목걸이에 레이어드목걸이가 하나로된 목걸이와 동그란 귀걸이를 착용하고 있는 모습"></li>
+                      <li><img src="mainpage/vs2.png" alt="여성 모델이 이마에 손을 올리고있고 은색의 줄로된 형태의 목걸이와 팔찌 귀걸이를 착용하고 있는 모습"></li>
+                      <li><img src="mainpage/vs3.png" alt="여성이 앉아서 정면을 바라보고있는 모습과 옆모습으로 파란색 칼랑코꽃 귀걸이와 헤어핀을 착용하고 있는 모습"></li>
+                  </ul>
+              </div>
+                <div class="tit_box">     
+                  <ul class="tit_fr">
+                      <li class="item">
+                          <h2 class="vs_tit">Kalanchoe Pearl Layered Necklace</h2>
+                          <p class="vs_com">꽃 팬던트와 담수 진주 포인트로<br>
+                            청순한 분위기를 자아내는 <br>
+                            칼랑코에 펄 레이어드 목걸이<br>
+                          </p>
+                          <a href="" class="vs_arrow"></a>
+                      </li>
+                      <li class="item">
+                          <h2 class="vs_tit">Dressy Long Bold Line Earring</h2>
+                          <p class="vs_com">스네이크 줄의 높은 광택감과<br>
+                            독보적인 기장으로<br>
+                            강렬한 포인트를 주는 아이템<br>
+                         </p>
+                          <a href="" class="vs_arrow"></a>
+                      </li>
+                      <li class="item">
+                          <h2 class="vs_tit">Kalanchoe Pearl Hair pin</h2>
+                          <p class="vs_com">설렘이라는 꽃말을 가지고있는 칼랑코에<br>
+                            비비드한 컬러감의 꽃 장식으로<br>
+                            한층더 화사해보이는 스타일링<br>
+                          </p>
+                          <a href="" class="vs_arrow"></a>
+                      </li>
+                  </ul>
+                 </div>
+                  <ul class="arr_box">
+                      <li class="item">
+                          <div class="arr_box">
+                              <label for="ra3" class="prev_btn" data-val="3"></label>
+                              <label for="ra2" class="next_btn" data-val="2"></label>
+                          </div>
+                      </li>
+                      <li class="item">
+                          <div class="arr_box">
+                         <label for="ra1" class="prev_btn" data-val="1"></label>
+                         <label for="ra3" class="next_btn" data-val="3"></label>
+                          </div>
+                      </li>
+                      <li class="item">
+                          <div class="arr_box">
+                         <label for="ra2" class="prev_btn" data-val="2"></label>
+                         <label for="ra1" class="next_btn" data-val="1"></label>
+                          </div>
+                      </li>
+                  </ul>
+                 
+                  <div class="vs_num_box">
+                    <span class="cur_num"></span> / <span>3</span>
+                  </div>
+                <script>
+                $(document).ready(function(){
+                    $(".cur_num").text(1);    
+                    $(".arr_box li label").click(function(){
+                        $(".cur_num").text(parseInt($(this).attr("data-val")));
+                    });
+                });    
+                </script>
+          </figure>
+          <section class="page" id="page1">
+             <div class="page_wrap">
+                 <h2>Celebrity PICK!</h2>
+                <ul class="lst_box1">
+                    <li class ="item">
+                        <img src="./mainpage/c1.png" alt="">
+                        <span class="more"></span>
+                        <div class="lst_tit_box">
+                            <h3 class="lst_tit">    Big Flower Line Chain Necklace</h3>
+                            <p class="lst_com">트와이스 쯔위 '알콜-프리'(Alcohol-Free) <br> MV 9, June - 2021</p>
+                            <a href=""class="detail">자세히 보기</a>
+                        </div>
+                        
+                    </li>
+                    <li class ="item">
+                        <img src="./mainpage/c2.png" alt="">
+                        <span class="more"></span>
+                        <div class="lst_tit_box">
+                            <h3 class="lst_tit">River Daisy Bracelet</h3>
+                            <p class="lst_com"> 한혜진 카카오TV '뮤즈강림' 4회<br> 7, June - 2021</p>
+                            <a href=""class="detail">자세히 보기</a>
+                        </div>
+
+                    </li>
+                    <li class ="item">
+                        <img src="./mainpage/c3.png" alt="">
+                        <span class="more"></span>
+                        <div class="lst_tit_box">
+                            <h3 class="lst_tit">New Bella Swarovski Ring</h3>
+                            <p class="lst_com">태연 15, May - 2021 <br>TVN '놀라운 토요일' 160회 </p>
+                            <a href=""class="detail">자세히 보기</a>
+                        </div>
+                        
+                    </li>
+                </ul>
+             </div>
+              
+          </section>
+          
+          <section class="page" id="page2">
+                <div class="page_wrap">
+                    <h2 class="page_tit none_tit">LINE</h2>
+                    <input type="radio" id="ba1" name="ba" class="ba" checked>
+                    <input type="radio" id="ba2" name="ba" class="ba">
+                    <ul class="lst_box2">
+                        <li class="ban_box1">
+                            <div class="box1">
+                                <ul class="box1_fr">
+                                    <li>
+                                        <h3 class="ban_tit">Edelweiss Stud Earring</h3>
+                                    </li>
+                                    <li>
+                                        <h3 class="ban_tit">Half-Colored Link Chain Mismatched Earrings</h3>
+                                    </li>
+                    
+                                </ul>
+                            </div>
+                            <div class="box2">
+                                <ul class="box2_fr">
+                                    <li><img src="./mainpage/f1.png" alt="배너1"></li>
+                                    <li><img src="./mainpage/g3.png" alt="배너2"></li>
+                                </ul>
+                            </div>
+                            <div class="box3">
+                                <ul class="box3_fr">
+                                    <li class="item1">
+                                        <p class="ban_com">시선을 잡아두는 비비드한 컬러감으로 착용시 <br> 피부톤을 한톤 업 시켜주는 효과로
+                                         포인트를 담아보세요.</p>
+                                    </li>
+                                    <li class="item2">
+                                        <p class="ban_com">
+                                        여리지만 강인한 분위기에 여성의 모습을 떠올리며<br>클래식무드에 화려함을 착용해보세요.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box4">
+                                <a href="" class="ban_more">제품 자세히 보기</a>
+                            </div>
+                        </li>
+                        <li class="ban_box2">
+                            <div class="box1">
+                                <ul class="box1_fr">
+                                    <li class="item1"><img src="./mainpage/f2.png" alt="배너1"></li>
+                                    <li class="item2"><img src="./mainpage/g4.png" alt="배너2"></li>
+                                </ul>
+                            </div>
+                            <div class="box2">
+                                <ul class="box2_fr">
+                                    <li>
+                                        <p class="ban_com">Hibiscus Clip Earring</p>
+                                    </li>
+                                    <li>
+                                        <p class="ban_com">Twist Bangle Earrin</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="ban_box3">
+                            <label for="ba1" class="menu_txt item1">
+                                Floresccnce
+                            </label>
+                            <label for="ba2" class="menu_txt item2">
+                                Eunola
+                            </label>
+
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="page" id="page3">
+               <h2 class="mono">#DanaBurton</h2>
+                <ul class="ban_box clr">
+                    <li class="banbox_top">
+                        <ul class="top_left_box">
+                            <li><img src="mainpage/top1.png" alt=""></li>
+                        </ul>
+                        <ul class="top_right_box">        
+                            <li><img src="mainpage/top2.png"alt=""></li>
+                            <li><img src="mainpage/top3.png" alt=""></li>
+                        </ul>
+                    </li>
+                    <li class="banbox_bottom">
+                        <ul>
+                            <li><img src="mainpage/bottom1.png" alt=""></li>
+                            <li><img src="mainpage/bottom2.png"alt=""></li>
+                            <li><img src="mainpage/bottom3.png"alt=""></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            
+            
+            
+            
+            
+      </div>
+      <footer class="ft">
+                      <div class="ft_wrap">
+                <ul class="ft_box">
+                    <li class="col1">
+                        <img src="./mainpage/footer_logo.png" alt="하단로고">
+                    </li>
+                    <li class="col2">
+                        <p class="linkbar">
+                            <a href="">About</a>
+                            <a href="">Terms &amp; Conditions</a>
+                            <a href="">Guide</a>
+                            <a href="">Privacy Policy</a>
+                        </p>
+                        <p class="addr">
+                            도도.<br>
+                            서울특별시 중구 소월로 8 (남대문로5가) 04527 제분빌딩 7층 다나버튼<br>
+                            Danaburton@Naver.Com<br>
+                            02-755-0901
+                            Opening Hours / 10:00 AM - 5:00 PM / Monday - Friday
+                        </p>
+                        <p class="copyright">COPYRIGHT © ABLEC&amp;C. ALL RIGHT RESERVED.</p>
+                    </li>
+                    <li class="col3">
+                        <p class="sns_link">
+                            <a href=" " class="utb_ico"></a>
+                            <a href=" " class="insta_ico"></a>
+                            <a href=" " class="face_ico"></a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+      </footer>
+    </div>
+ <!--   <div id="pop">
+       <input type="checkbox" di="pop_ck" class="ck" ckecked>
+        <article class="pop_fr">
+            <div class="left_fr">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/XujPE6f0ZC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="right_fr">
+                <label for="pop_ck" class="pop_close_btn"></label>
+                <h3 class="pop_tit">
+                    악세서리
+                </h3>
+            </div>
+        </article>
+    </div> -->
+</body>
+</html>
