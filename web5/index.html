@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>비짓제주</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 검색엔진에서 잘 검색되기 위한 문서정보 설정 -->
+    <meta name="title" content="비짓제주 VISTJEJU">
+    <meta name="description" content="제주관광공사 운영 제주도 공식 관광정보 포털로 제주공식 관광지도, 관광지, 음식점(맛집), 숙박, 쇼핑, 교통, 테마여행, 제주알아가기 등의 제주여행 정보 제공">
+    <meta name="keywords" content="제주관광공사 운영 제주도 공식 관광정보  포털로 제주공식 관광지도, 관광지, 음식점(맛집), 숙박, 쇼핑, 교통, 테마여행, 제주알아가기 등의 제주여행정보 제공">
+    <meta name="author" content="조강민">
+    <!-- 파비콘 설정 -->
+    <link rel="icon" href="192.jpg">
+    <link rel="shortcut icon" href="192.jpg">
+    <link rel="shortcut icon" href="256.jpg">
+    <!-- 파비콘 아이폰-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="256.jpg">
+    <!-- 오픈그래프 인터넷익스플로우 (해시테시 이미지)-->
+	<meta property="og:title" content="비짓제주 VISTJEJU">
+	<meta property="og:description" content="제주관광공사 운영 제주도 공식 관광정보 포털로 제주공식 관광지도, 관광지, 음식점(맛집), 숙박, 쇼핑, 교통, 테마여행, 제주알아가기 등의 제주여행 정보 제공">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="og_img.jpg">
+   
+    <!-- IE의 html5 태그 인식 모듈 연결 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- IE에 미디어쿼리 적용 가능한 모듈 연결 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- 벤더 프리 모듈 연결 -->
+    <script src="./js/prefixfree.min.js"></script>
+
+  
+    <!-- jquery 모듈 연결 -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+   
+    
+
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet" href="../reset.css">
+    
+    <!-- xeicon 모듈 연결 -->
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!--포인트컬러 주황 #ff862d 배경색 #e0e0e0 그린컬러 #3c880e 청색#3c49c0-->
+    
+    
+        
+    
+    
+
+    <script>
+        window.addEventListener('load', function(){
+            setTimeout(scrollTo, 0, 0, 1);
+        }, false);
+
+	</script>    
+
+    <!-- 모바일 기기 설정-->
+    <!-- 모바일을 위한 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- 자동 전화걸기 방지 -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 아이폰에서 홈 화면에 아이콘 추가 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 아이폰에서 실행시 스플래시 화면 제공 -->
+    <link rel="apple-touch-startup-image" href="./img/startup.png">
+    <!-- 아이폰에서 상태바에 색상 입히기 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 툴바 및 주소 입력줄 숨기기 -->
+    
+  
+   
+    <style>
+		
+        *{margin: 0;padding: 0;}
+        html, body{width: 100%;}
+        a {text-decoration: none; color:#333;}
+        ul {list-style:none;}
+        
+        .wrap {width: 100%; min-height:150vh;}
+        .heder {clear: both; height:100px; width:100vw; position: fixed;border-bottom:1px solid #e0e0e0; z-index:99;}
+            .hd_wrap {width: 1440px; margin: 0 auto; height:80px; }
+            .heder:hover {background-color:rgb(207,207,207,0.8);}
+            
+            .tnb {width:100vw; height: 30px; background-color:#3c49c0;}
+            .tnb_wrap {width:1440px; height: 30px; margin: 0 auto; }
+            .tnb_wrap ul {float: right; width:700px;}
+            .tnb_wrap a {display: block;color:#fff; float: left; padding-left:20px;padding-top:3px;}
+
+            .logo {display: block; float: left;}
+            .logo img {display: block; width: auto; height: 70px;}
+            .gnb {height: 80px; cursor: pointer}
+            
+            .gnb .dp1 {width:18%; float:left; text-align: center; height:80px;}
+            .gnb .dp1>a {display: block; padding-top:15px; padding-bottom:15px;font-size:18px;  font-weight:600; line-height:40px; color:#fff;}
+            .sub {width:70%; padding-left:80px; visibility: hidden; opacity:0; height: 300px; background-color:rgb(207,207,207,0.8);}
+            
+            .sub a{display: block; text-align: left; padding-top: 10px; padding-bottom: 10px; color:#fff; }
+            .gnb:hover .sub {visibility: visible; opacity: 1; transition: 0.6s;}
+        
+            .dp1 .sub a:hover {display: block; color:#ff862d;}
+        
+        
+        
+        
+        .content {width: 100%; overflow:hidden;}
+        .vs {width:100vw; }
+            .img_box{width:300%; height:746px;}
+            .img_box li {width: 33.333%; display: block; float: left;}
+        
+            .icon_box {width:1000px; height:50px; position:absolute; left:50%; margin-left: -500px; top:470px; float: left;}
+            .icon_box li {float: left; margin-right:50px; margin-left:50px;  width:100px; height:100px; background-color:rgb(207,207,207,0.7); border-radius:50px; cursor: pointer;}
+            .icon_box .item1 {background-image:url(icon/ico_theme_zone_1_on.png); background-repeat:no-repeat;  background-position:center; }
+            .icon_box .item2 {background-image:url(icon/ico_theme_zone_2_on.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item3 {background-image:url(icon/ico_theme_zone_3_on.png); background-repeat:no-repeat;background-position:center;}
+            .icon_box .item4 {background-image:url(icon/ico_theme_zone_4_on.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item5 {background-image:url(icon/ico_theme_zone_5_on.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item1:hover {background-image:url(icon/ico_theme_zone_1.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item2:hover {background-image:url(icon/ico_theme_zone_2.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item3:hover {background-image:url(icon/ico_theme_zone_3.png); background-repeat:no-repeat; background-position:center;}
+            .icon_box .item4:hover {background-image:url(icon/ico_theme_zone_4.png); background-repeat:no-repeat;background-position:center;}
+            .icon_box .item5:hover {background-image:url(icon/ico_theme_zone_5.png); background-repeat:no-repeat; background-position:center;}
+            
+        #page1 {width:1440px; margin: 0 auto; }
+            .character img {display: block; height:250px; width: auto; position: absolute; margin-top:-300px; left:50%; margin-left: -125px;}  
+            .box1 {margin-top:150px; width: 100%; height:550px;}
+            .left_box {float: left;}
+            .right_box {float: right;}
+            .main_tit {margin-bottom:40px; margin-top:30px; cursor: pointer;}
+            .main_tit:hover {color:#ff862d;}
+            .com1 table {display:table; width:600px; }
+            .com1 table tr{display:table-row;  }
+            .com1 table td{display:table-cell; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;border-bottom:1px solid #e0e0e0; padding-top:10px; padding-bottom: 10px;}
+            .com1 table tr:hover {color:#ff862d; cursor:pointer;}
+            .btn_box {padding-top:30px; width:600px; margin: 0 auto;}
+            .button1 {float:left;  background-color:#3c880e; border-radius:25px;}
+            .button1 a {display: block; margin: 20px; width:200px; text-align: center; color:#fff;}
+            .button2 {float:right; background-color:#3c880e; border-radius:25px;}
+            .button2 a {display: block; margin: 20px; width:200px; text-align: center; color:#fff;}
+            .img_box2 {cursor: pointer; width:750px; margin: 0 auto;}
+            .img_box2 img {display: block; float: left; transform:scale(1); margin-left:40px; margin-right:40px; border-radius:20px;}
+            .img_box2 img:hover {transform:scale(1.5); transition: 0.6s;}
+        
+        #page2 {width:100vw; height: 900px;}
+            .box2 {width:100vw; height:710px; float: left;position: relative;}
+            .left_box_2 {width:1200px; left: 0;}
+            .right_box_2 {width:720px; height:710px; right: 0; background:#e0e0e0; top: 0; position: absolute;}
+            .right_box_2 img {display: block; height:400px; position: absolute;margin-top:250px;}
+            .map_tit {text-align:right; margin-right:30px; margin-top:150px;  font-size:100px; color:#fff; }
+        
+        #page3 {width:1440px; margin: 0 auto; height:550px;}
+            .page3_tit {text-align: center; padding-bottom:20px;}
+            .item1, .item2, .item3, .item4, .item5 {float: left; margin: 30px; border-radius:20px; }
+            .com {display: block; text-align: center; background-color:rgb(207,207,207,0.8); padding-top:10px; padding-bottom:10px; margin-top:-10px; cursor:pointer;}
+            .com:hover {background-color:#ff862d; color:#fff;  }
+
+        #page4 {width: 100%; height:700px;  background-color:#3c49c0;  clear: both;}
+            .page4_tit {padding-left:170px; color:#fff; padding-top: 70px;}
+            .box4 {width: 1440px; margin: 0 auto; height:300px; clear: both;}
+            .box4_1 {width: 1440px; height: 300px; }
+            .box4_1 ul {float: left; width:33.333%; text-align: center;}
+            .utb_com {width: 380px; height:50px;line-height:3; text-align: center; background-color:#52c5e2; margin-left:50px; margin-top:-5px;}
+            .utb_com:hover {background-color:#ff862d}
+            .utb_com p {color:#fff;}
+            .left_box4 {float:left; display: block; text-align: center;}
+            .page4_tit {width:400px; margin-left:60px; padding-bottom: 20px;}
+            .box4_2 {width:1440px; margin: 0 auto; height:300px; float: left; }
+            .left_box4 {width:600px; height:200px; float: left;}
+            .left_box4 h2 {color: #fff; display: block; width:230px; margin-left:-30px;}
+            .app_box {padding-top:30px;}
+            .app_box li {float: left; padding-right:20px;}
+            .app_box li a img {width:80px; height: auto; margin-left:14px; padding-top:10px; }
+            .app_txt {text-align:center; display: block; color:#fff; margin-left:10px; }
+            .right_box4 {width:700px; height:200px; float: right;}
+            .right_box4 h2 {color: #fff; }
+            .app_box2 {padding-top: 30px;}
+            .app_box2 li {float: left; margin-right:20px;  width:80px;}
+            .app_box2 li a img {width:60px; height: auto; margin-left:14px; display: block; text-align: center;padding-top:10px;}
+            .app_box2 li a {display:block; width:80px; height:80px; background-color:#fff; text-align: center; border-radius:15px;}        
+            .app2_txt {text-align:center; display: block; color:#fff; margin-left:10px; }
+        
+        #page5 {width: 1440px; margin: 0 auto; height:200px; clear: both;}
+            .pg5_tit {text-align: center; padding-top:20px; padding-bottom: 20px;}
+            .sns_box {width:1000px; margin: 0 auto; height:100px; }
+            .sns_box ul li {display: block; width:25%;  float:left; background-color:#3c49c0; padding-top:20px; padding-bottom: 20px;}
+            .sns_box ul li:hover {background-color:#3c880e;}
+            .sns_box ul li a {display: block; color:#fff;font-size:20px; text-align: center;}
+            .sns_box ul li a:after {content:"|"; margin-left:60px;}
+
+        #page6 {width:1000px; margin: 0 auto; height:200px; clear: both;}
+            #page6 ul li {float: left; width:20%; }
+            #page6 ul li a img {display: block; width: 150px; height: auto;}
+        
+        
+		.ft {width:100%; clear: both;}
+        .link {width: 100%; height:50px; background-color:#2f313d;}
+        .link ul {width: 1000px; margin: 0 auto;}
+        .link ul li {display: block; float: left; padding-left:20px; line-height:3.5;}
+        .link ul li a {display: block; color:#fff; font-size:14px; }
+        .link ul li a:hover {color:#3c49c0 }
+        
+        .ft_wrap {width: 1440px; margin: 0 auto; height:100px;}
+        .adrr p {display: block; font-size:14px;}
+        .capy {display: block; font-size:14px;}
+
+		.logo_ft {float: left;}
+		.logo_ft img {display: block; width:auto; height: 70px;}
+     
+
+    </style>
+
+
+
+
+
+
+</head>
+<body>      
+       <div class="heder">
+         <nav class="tnb">
+              <div class="tnb_wrap">
+              <ul>
+               <li><a href="">공지사항:7월 놓치지 말아야 할 제주 관광 10선 차오르는 7월 제주</a></li>
+               <li><a href="">로그인</a></li>
+               <li><a href=""><i class="xi-search"></i></a></li>
+               </ul>
+               </div>
+             </nav>
+          <div class="hd_wrap">
+
+              <nav class="gnb">
+                  <a href="" class="logo"><img src="mainpage/logo.svg" alt="제주비짓로고"></a>
+                  <ul class="dp1">
+                      <a href="">관광명소</a>
+                      <li class="sub">
+                          <a href="" class="dp2">자연</a>
+                          <a href="" class="dp2">문화관광</a>
+                          <a href="" class="dp2">테마관광</a>
+                          <a href="" class="dp2">섬속의섬</a>
+                          <a href="" class="dp2">도보</a>
+                          <a href="" class="dp2">웰니스</a>
+                          
+                      </li>
+                  </ul>
+                <ul class="dp1">
+                      <a href="">숙박·음식·쇼핑</a>
+                      <li class="sub">
+                          <a href="" class="dp2">음식점</a>
+                          <a href="" class="dp2">숙박</a>
+                          <a href="" class="dp2">쇼핑</a>
+                      </li>
+                  </ul>
+                  <ul class="dp1">
+                      <a href="">레저·체험</a>
+                      <li class="sub">
+                          <a href="" class="dp2">골프</a>
+                          <a href="" class="dp2">ATV·카트</a>
+                          <a href="" class="dp2">승마</a>
+                          <a href="" class="dp2">패러글라이딩</a>
+                          <a href="" class="dp2">수렵·활쏘기</a>
+                          <a href="" class="dp2">해양스포츠</a>
+                          <a href="" class="dp2">캠핑</a>
+                      </li>
+                  </ul>
+                 <ul class="dp1">
+                      <a href="">여행필수정보</a>
+                      <li class="sub">
+                          <a href="" class="dp2">안전·안심관광가이드</a>
+                          <a href="" class="dp2">날씨</a>
+                          <a href="" class="dp2">교통</a>
+                          <a href="" class="dp2">의료기관</a>
+                          <a href="" class="dp2">가이드북</a>
+                          <a href="" class="dp2">관광문의</a>
+                      </li>
+                  </ul>
+                 <ul class="dp1">
+                      <a href="">제주여행추천</a>
+                      <li class="sub">
+                          <a href="" class="dp2">일정추천</a>
+                          <a href="" class="dp2">여행큐레이션</a>
+                          <a href="" class="dp2">테마여행</a>
+                          <a href="" class="dp2">VR로보는제주</a>
+                          <a href="" class="dp2">알쓸신제원정대</a>
+                          <a href="" class="dp2">제주문화공연</a>
+                      </li>
+                  </ul>
+              </nav>
+               
+           </div>
+       </div>
+       
+       <div class="content">
+           <figure class="vs">
+               
+               <ul class="img_box">
+                   <li><img src="mainpage/vs1.jpg" alt="제주바다가 보이며 같이가치 떠나는 길 나는 제주로 간다라는 문구 적혀있다 "></li>
+                   <li><img src="mainpage/vs2.jpg" alt="제주 귤밭에 힐링제주 아름다운 자연에서 체험하고 힐링하는 제주여행이라 문구가 써있다"></li>
+                   <li><img src="mainpage/vs3.jpg" alt="돌하르방과 제주의 바다가 보이며 문구 슬로우 여행중 여기는 제주라는 문구가 써있다."></li>
+               </ul>
+                       
+               <ul class="icon_box">
+                   <li class="item1"><a href=""></a></li>
+                   <li class="item2"><a href=""></a></li>
+                   <li class="item3"><a href=""></a></li>
+                   <li class="item4"><a href=""></a></li>
+                   <li class="item5"><a href=""></a></li>
+               </ul>
+           </figure>
+
+           <div class="page" id="page1">
+               <div class="character"><img src="./character/character.gif" alt="귤캐릭터가 움직인다">
+               </div>
+               <div class="box1">
+                   <ul class="left_box">
+                       <li>
+                            <h2 class="main_tit">관광소식</h2> 
+                            <div class="com1">
+                                <table>
+                                 <tr>
+                                     <td>○</td>
+                                     <td>누구나 안심하고 이용할 수 있는 '제라진-안심식당' 리스트</td>
+                                     <td>2021-05-28</td>
+                                     
+                                 </tr>
+                                 <tr>
+                                    <td>○</td>
+                                     <td>[제주러뷰챌린지] 챌린지 당첨자 발표</td>
+                                     <td>2021-05-07</td>
+                                 </tr>
+                                 <tr>
+                                    <td>○</td>
+                                     <td>비짓제주 서비스 복구 알림</td>
+                                     <td>2021-05-06</td>
+                                 </tr>
+                                 <tr>
+                                    <td>○</td>
+                                     <td>[사회적거리두기] 도내 관광지 등 이용인원 및 이용방법 제한 관련 안내</td>
+                                     <td>2021-03-10</td>
+                                 </tr>
+                                </table>
+                            </div>
+                            <div class="btn_box">
+                            <div class="button1"><a href="">문화행사소식</a></div>
+                            <div class="button2"><a href="">월별행사소식</a></div>  
+                            </div>
+                       </li>
+                   </ul>
+                   <ul class="right_box">
+                        <h2 class="main_tit">팝업알림</h2>
+                        <div class="img_box2">
+                            <img src="mainpage/pg1.jpg" alt="">
+                            <img src="mainpage/pg2.jpg" alt="">
+                        </div>
+                   </ul>
+               </div>
+           </div>
+           <div class="page" id="page2">
+              <div class="box2">
+               <div class="left_box_2">
+                   <a href=""><img src="mainpage/map1.jpg" alt="제주도 지도 일러스트 이미지"></a>
+               </div>
+               <div class="right_box_2">
+                   <img src="character/character_map.png" alt="">
+                   <h2 class="map_tit">새로운<br>제주를<br>알아가는<br>즐거움</h2>
+               </div>
+           </div>
+           </div>
+            <div class="page" id="page3">
+                <h2 class="page3_tit">제주 축제 여행</h2>
+                <div class="item1">
+                    <a href=""><img src="mainpage/cut1.jpg" alt=""></a>
+                    <p class="com">휴애리유럽 수국축제<br>2021.04.04~2021.09.12</p>
+                </div>
+               <div class="item2">
+                    <a href=""><img src="mainpage/cut2.jpg" alt=""></a>
+                    <p class="com">제주허브동산 수국축제<br>2021.04.12~2021.08.31</p>
+                </div>
+                <div class="item3">
+                    <a href=""><img src="mainpage/cut3.jpg" alt=""></a>
+                    <p class="com">미노르블랑 수국축제<br>2021.04.12~2021.08.31</p>
+                </div>
+                <div class="item4">
+                    <a href=""><img src="mainpage/cut4.jpg" alt=""></a>
+                    <p class="com">9.81파크:X리그2021정규시즌<br>2021.03.01~2021.11.07</p>
+                </div>
+            </div>
+            
+            
+
+            
+            
+           <div class="page" id="page4">
+               <h2 class="page4_tit">영상으로 만나는 제주</h2>
+               <a href="" class="utb_link">
+                   <p></p>
+               </a>
+               <div class="box4">
+                  <div class="box4_1">
+                   <ul class="utb">
+                       <li>
+                           <img src="mainpage/cut2_1.jpg" alt="">
+                           <div class="utb_com"><p>[안전여행]킥보드 이것만은 알고타자</p></div>
+                       </li>
+                   </ul>
+                   <ul class="utb">
+                       <li>
+                           <img src="mainpage/cut2_2.jpg" alt="">
+                           <div class="utb_com"><p>[4K Travel]활짝핀 수국 만나러 함께 떠나요</p></div>
+                       </li>
+                   </ul>
+                   <ul class="utb">
+                       <li>
+                           <img src="mainpage/cut2_3.jpg" alt="">
+                           <div class="utb_com"><p>[4K Travel]용머리해안 함께걸어요!</p></div>
+                       </li>
+                   </ul>
+               </div>
+                <div class="box4_2">
+                        <div class="left_box4">
+                           <h2>모바일앱 다운로드</h2>
+                            <ul class="app_box">
+                                <li>
+                                    <a href=""><img src="mainpage/app1.png" alt=""></a>
+                                    <p class="app_txt">내손안에제주</p>
+                                </li>
+                                <li>
+                                    <a href=""><img src="mainpage/app2.png" alt=""></a>
+                                    <p class="app_txt">제주안심</p>
+                                </li>
+                               <li>
+                                    <a href=""><img src="mainpage/app3.png" alt=""></a>
+                                    <p class="app_txt">제주페이</p>
+                                </li>
+                                <li>
+                                    <a href=""><img src="mainpage/app4.png" alt=""></a>
+                                    <p class="app_txt">제주축제</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="right_box4">
+                           <h2>제주 관광</h2>
+                            <ul class="app_box2">
+                                <li>
+                                    <a href=""><img src="icon/1.png" alt=""></a>
+                                    <p class="app2_txt">관광해설</p>
+                                </li>
+                                <li>
+                                    <a href=""><img src="icon/2.png" alt=""></a>
+                                    <p class="app2_txt">맛집추천</p>
+                                </li>
+                               <li>
+                                    <a href=""><img src="icon/3.png" alt=""></a>
+                                    <p class="app2_txt">숙소추천</p>
+                                </li>
+                                <li>
+                                    <a href=""><img src="icon/4.png" alt=""></a>
+                                    <p class="app2_txt">추천코스</p>
+                                </li>
+                                <li>
+                                    <a href=""><img src="icon/5.png" alt=""></a>
+                                    <p class="app2_txt">교통정보</p>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+             </div>
+              </div>   
+        
+           <div class="page" id="page5">
+               <h2 class="pg5_tit">제주 관광 공식 SNS 비짓제주</h2>
+               <div class="sns_box">
+                   <ul>
+                       <li><a href="">Youtube</a> </li>
+                       <li><a href="">Facebook</a> </li>
+                       <li><a href="">Ingstargram</a> </li>
+                       <li><a href="">Kakaotalk</a> </li>
+
+                   </ul>
+               </div>
+           </div>
+           <div class="page" id="page6">
+               <ul>
+                   <li><a href=""><img src="mainpage/b_img1.png" alt=""></a></li>
+                   <li><a href=""><img src="mainpage/b_img2.png" alt=""></a></li>
+                   <li><a href=""><img src="mainpage/b_img3.png" alt=""></a></li>
+                   <li><a href=""><img src="mainpage/b_img4.png" alt=""></a></li>
+                   <li><a href=""><img src="mainpage/b_img5.png" alt=""></a></li>
+               </ul>
+           </div>
+           <div class="page" id="page7"></div>
+       
+       <footer class="ft">
+            <div class="link">
+              <ul>
+                  <li><a href="">개인정보처리방침</a></li>
+                  <li><a href="">이용약관</a></li>
+                  <li><a href="">틀린정보신고</a></li>
+                  <li><a href="">제주관광문의</a></li>
+                  <li><a href="">제주관광사진이용</a></li>
+                  <li><a href="">JEJU TourAPI</a></li>
+                  <li><a href="">제주소식</a></li>
+                  <li><a href="">관광업체등록신청</a></li>
+              </ul>
+          </div>
+         <div class="ft_wrap">
+         <a href="" class="logo_ft"><img src="mainpage/ft_logo.svg" alt=""></a>
+         <div class="adrr"><p>(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터<br>
+                관광문의 : 제주관광공사Tel : 064-740-6000~1FAX : 064-740-6090사업자등록번호 : 616-82-21432<br>
+                관광불편신고 : 제주안내 120콜센터(국번없이 120번)</p>
+        </div>
+        <div class="capy">Copyright©Jeju Tourism Organization, All rights reserved.</div>
+
+      	</div> 
+       </footer>
+         <div class="left_quick">
+        <button class="on"><span>페이지1</span></button>
+        <button><span>페이지2</span></button>
+        <button><span>페이지3</span></button>
+        <button><span>페이지4</span></button>
+        <button><span>페이지5</span></button>
+    	</div>
+        <div class="to_top"><button>top</button></div>
+    </div>
+</body>
+</html>
