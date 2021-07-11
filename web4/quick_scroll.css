@@ -1,0 +1,23 @@
+@charset "utf-8";
+.left_quick { position:fixed; left: 10px; top:38%; z-index:999; }
+.left_quick button { display:block; background-color: transparent; border:0; outline:0; width: 40px; height: 40px; position:relative; cursor: pointer; }
+.left_quick button span { display:block; text-indent:-9999px; width: 5px; height: 5px; overflow:hidden; background-color:gold; border-radius:3px; margin: 0 auto; }
+.left_quick button.on span { background-color: deeppink; }
+.left_quick button:before { content:""; display:block; width: 40px; height: 40px; border-radius:22px; border:1px solid transparent; position:absolute; top: 0; left: 0; }    
+.left_quick button.on:before { border:1px solid deeppink;}   
+
+.to_top { position:fixed; right:10px; top:45%; z-index:999; visibility: hidden; opacity:0; transition:0.5s; }
+.to_top.on { visibility: visible; opacity: 1; }    
+.to_top button { display:block; background-color: transparent; border:0; outline:0; width: 40px; height: 40px; text-align: center; line-height: 40px; color:#fff; border-radius:22px; overflow:hidden; position: relative; cursor:pointer; }
+.to_top button:before { content:"▲"; display:block; width: 40px; height: 40px; line-height: 40px; text-align: center; background-color: deeppink; 
+    position: absolute; left: 0; top: 0; color:#fff; cursor:pointer; border-radius:22px; }
+
+/*
+    <div class="left_quick">
+        <button class="on"><span>페이지1</span></button>
+        <button><span>페이지2</span></button>
+        <button><span>페이지3</span></button>
+        <button><span>페이지4</span></button>
+        <button><span>페이지5</span></button>
+    </div>
+    <div class="to_top"><button>위로</button></div> */
